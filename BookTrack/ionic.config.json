@@ -1,0 +1,7 @@
+{
+  "name": "BookTrack",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
