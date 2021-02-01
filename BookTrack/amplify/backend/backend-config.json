@@ -23,5 +23,13 @@
       "providerPlugin": "awscloudformation",
       "type": "manual"
     }
+  },
+  "auth": {
+    "booktrackc7e4a71e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }

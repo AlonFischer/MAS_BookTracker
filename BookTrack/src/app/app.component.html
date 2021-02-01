@@ -1,8 +1,10 @@
 <ion-app>
-  <ion-button (click)="createTodo()">Add Data</ion-button>
-  <ion-list>
-    <ion-item *ngFor="let item of todos">
-      <p>{{item.name}} - {{item.description}}</p>
-    </ion-item>
-  </ion-list>
+  <amplify-authenticator>
+    <div>
+      My App
+      <amplify-sign-out></amplify-sign-out>
+    </div>
+  </amplify-authenticator>
 </ion-app>
+
+

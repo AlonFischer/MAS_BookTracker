@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -11,8 +12,10 @@ import { APIService } from './API.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+
 export class AppComponent {
   todos: Array<any>;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
