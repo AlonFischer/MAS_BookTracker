@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 
-import { Platform } from '@ionic/angular';
+import { Platform, PopoverController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AlertController } from '@ionic/angular';
 
 import { APIService } from './API.service';
 
@@ -20,11 +21,35 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private apiService: APIService
+    private apiService: APIService,
+    public alertController: AlertController
   ) {
     this.initializeApp();
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'New Book',
+      subHeader: 'Add a book to your list.',
+      inputs: [
+        {
+          name: 'Title',
+          type: 'text',
+          id: 'title-id',
+          placeholder: 'title'
+        },
+        {
+          name: 'Author',
+          type: 'text',
+          id: 'author-id',
+          placeholder: 'author'
+        }],
+
+      buttons: ['Submit', 'Cancel']
+    });
+
+    await alert.present();
+  }
   createTodo() {
     this.apiService.CreateTodo({
       name: 'ionic',
