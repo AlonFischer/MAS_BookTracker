@@ -11,6 +11,7 @@ export interface SubscriptionResponse<T> {
 
 export type CreateTodoInput = {
   id?: string | null;
+  owner: string;
   name: string;
   description?: string | null;
 };
@@ -64,6 +65,7 @@ export type ModelSizeInput = {
 
 export type UpdateTodoInput = {
   id: string;
+  owner?: string | null;
   name?: string | null;
   description?: string | null;
 };
@@ -74,6 +76,7 @@ export type DeleteTodoInput = {
 
 export type ModelTodoFilterInput = {
   id?: ModelIDInput | null;
+  owner?: ModelStringInput | null;
   name?: ModelStringInput | null;
   description?: ModelStringInput | null;
   and?: Array<ModelTodoFilterInput | null> | null;
@@ -100,6 +103,7 @@ export type ModelIDInput = {
 export type CreateTodoMutation = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -109,6 +113,7 @@ export type CreateTodoMutation = {
 export type UpdateTodoMutation = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -118,6 +123,7 @@ export type UpdateTodoMutation = {
 export type DeleteTodoMutation = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -127,6 +133,7 @@ export type DeleteTodoMutation = {
 export type GetTodoQuery = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -138,6 +145,7 @@ export type ListTodosQuery = {
   items: Array<{
     __typename: "Todo";
     id: string;
+    owner: string;
     name: string;
     description: string | null;
     createdAt: string;
@@ -149,6 +157,7 @@ export type ListTodosQuery = {
 export type OnCreateTodoSubscription = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -158,6 +167,7 @@ export type OnCreateTodoSubscription = {
 export type OnUpdateTodoSubscription = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -167,6 +177,7 @@ export type OnUpdateTodoSubscription = {
 export type OnDeleteTodoSubscription = {
   __typename: "Todo";
   id: string;
+  owner: string;
   name: string;
   description: string | null;
   createdAt: string;
@@ -185,6 +196,7 @@ export class APIService {
         createTodo(input: $input, condition: $condition) {
           __typename
           id
+          owner
           name
           description
           createdAt
@@ -210,6 +222,7 @@ export class APIService {
         updateTodo(input: $input, condition: $condition) {
           __typename
           id
+          owner
           name
           description
           createdAt
@@ -235,6 +248,7 @@ export class APIService {
         deleteTodo(input: $input, condition: $condition) {
           __typename
           id
+          owner
           name
           description
           createdAt
@@ -257,6 +271,7 @@ export class APIService {
         getTodo(id: $id) {
           __typename
           id
+          owner
           name
           description
           createdAt
@@ -282,6 +297,7 @@ export class APIService {
           items {
             __typename
             id
+            owner
             name
             description
             createdAt
@@ -313,6 +329,7 @@ export class APIService {
         onCreateTodo {
           __typename
           id
+          owner
           name
           description
           createdAt
@@ -330,6 +347,7 @@ export class APIService {
         onUpdateTodo {
           __typename
           id
+          owner
           name
           description
           createdAt
@@ -347,6 +365,7 @@ export class APIService {
         onDeleteTodo {
           __typename
           id
+          owner
           name
           description
           createdAt

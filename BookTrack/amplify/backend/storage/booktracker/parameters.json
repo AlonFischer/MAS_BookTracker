@@ -1,0 +1,7 @@
+{
+    "tableName": "books",
+    "partitionKeyName": "Owner",
+    "partitionKeyType": "S",
+    "sortKeyName": "Title",
+    "sortKeyType": "S"
+}

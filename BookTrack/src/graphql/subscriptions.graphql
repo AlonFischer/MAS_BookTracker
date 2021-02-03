@@ -2,6 +2,7 @@
 subscription OnCreateTodo {
   onCreateTodo {
     id
+    owner
     name
     description
     createdAt
@@ -11,6 +12,7 @@ subscription OnCreateTodo {
 subscription OnUpdateTodo {
   onUpdateTodo {
     id
+    owner
     name
     description
     createdAt
@@ -20,6 +22,7 @@ subscription OnUpdateTodo {
 subscription OnDeleteTodo {
   onDeleteTodo {
     id
+    owner
     name
     description
     createdAt

@@ -2,6 +2,7 @@
 query GetTodo($id: ID!) {
   getTodo(id: $id) {
     id
+    owner
     name
     description
     createdAt
@@ -16,6 +17,7 @@ query ListTodos(
   listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      owner
       name
       description
       createdAt

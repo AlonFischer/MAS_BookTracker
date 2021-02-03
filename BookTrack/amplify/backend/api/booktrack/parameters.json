@@ -1,5 +1,11 @@
 {
   "AppSyncApiName": "booktrack",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authbooktrackc7e4a71e",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
