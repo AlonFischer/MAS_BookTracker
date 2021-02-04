@@ -4,23 +4,13 @@
       <amplify-sign-out>
         <div>
           My App
-          <ion-list id="bookList">
-            <ion-item>
-              <ion-label>I, Robot <small>Assimov</small></ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>Computer networks <small>Kurose</small></ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>Oathbringer <small>Sanderson</small></ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>The Lord of the Rings <small>Tolkien</small></ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>Ionic for Dummies <small>NaP</small></ion-label>
+          <ion-list>
+            <ion-item *ngFor="let book of books">
+              <ion-item>{{ book.name }}</ion-item>
+              <small>{{ book.author }}</small>
             </ion-item>
           </ion-list>
+          
           <ion-button color="primary" (click)="presentAlert()">New Book</ion-button>
           <amplify-sign-out></amplify-sign-out>
         </div>

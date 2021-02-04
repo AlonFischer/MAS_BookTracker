@@ -8,6 +8,19 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
 
+
+  //locally stored booklist with placeholder books
+  books = [
+    {
+      name: "Lord of the Rings",
+      author: "Tolkien"
+    },
+    {
+      name: "Computer Networking",
+      author: "Kurose"
+    }
+  ];
+
   constructor(private alertController: AlertController) {}
 
   async presentAlert() {
@@ -50,9 +63,11 @@ export class HomePage {
     await alert.present();
   }
   
-  addBook(title: string, author: string){
-    console.log(title + " " + author);
+  //called when "submit" is clicked to add a new book
+  addBook(newTitle: string, newAuthor: string){
+    console.log(newTitle + " " + newAuthor);
+    this.books.push({name: newTitle, author: newAuthor})
   }
-  
+    
     
 }

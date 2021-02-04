@@ -17,6 +17,18 @@ import { APIService } from './API.service';
 export class AppComponent {
   todos: Array<any>;
 
+  books = [
+    {
+      name: "Lord of the Rings",
+      author: "Tolkien"
+    },
+    {
+      name: "Computer Networking",
+      author: "Kurose"
+    }
+  ];
+
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -68,10 +80,12 @@ export class AppComponent {
     await alert.present();
   }
 
-  addBook(title: string, author: string){
-    console.log(title + " " + author);
+  addBook(newTitle: string, newAuthor: string){
+    console.log(newTitle + " " + newAuthor);
+    this.books.push({name: newTitle, author: newAuthor})
   }
   
+
   createTodo() {
     this.apiService.CreateTodo({
       name: 'ionic',
