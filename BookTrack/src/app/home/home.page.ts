@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  //locally stored booklist with placeholder books
+  books = [
+    {
+      name: "Lord of the Rings",
+      author: "Tolkien"
+    },
+    {
+      name: "Computer Networking",
+      author: "Kurose"
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
