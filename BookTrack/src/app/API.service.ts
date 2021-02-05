@@ -12,13 +12,13 @@ export interface SubscriptionResponse<T> {
 export type CreateTodoInput = {
   id?: string | null;
   owner: string;
-  name: string;
-  description?: string | null;
+  title: string;
+  author?: string | null;
 };
 
 export type ModelTodoConditionInput = {
-  name?: ModelStringInput | null;
-  description?: ModelStringInput | null;
+  title?: ModelStringInput | null;
+  author?: ModelStringInput | null;
   and?: Array<ModelTodoConditionInput | null> | null;
   or?: Array<ModelTodoConditionInput | null> | null;
   not?: ModelTodoConditionInput | null;
@@ -66,8 +66,8 @@ export type ModelSizeInput = {
 export type UpdateTodoInput = {
   id: string;
   owner?: string | null;
-  name?: string | null;
-  description?: string | null;
+  title?: string | null;
+  author?: string | null;
 };
 
 export type DeleteTodoInput = {
@@ -77,8 +77,8 @@ export type DeleteTodoInput = {
 export type ModelTodoFilterInput = {
   id?: ModelIDInput | null;
   owner?: ModelStringInput | null;
-  name?: ModelStringInput | null;
-  description?: ModelStringInput | null;
+  title?: ModelStringInput | null;
+  author?: ModelStringInput | null;
   and?: Array<ModelTodoFilterInput | null> | null;
   or?: Array<ModelTodoFilterInput | null> | null;
   not?: ModelTodoFilterInput | null;
@@ -104,8 +104,8 @@ export type CreateTodoMutation = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -114,8 +114,8 @@ export type UpdateTodoMutation = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -124,8 +124,8 @@ export type DeleteTodoMutation = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -134,8 +134,8 @@ export type GetTodoQuery = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -146,8 +146,8 @@ export type ListTodosQuery = {
     __typename: "Todo";
     id: string;
     owner: string;
-    name: string;
-    description: string | null;
+    title: string;
+    author: string | null;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
@@ -158,8 +158,8 @@ export type OnCreateTodoSubscription = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -168,8 +168,8 @@ export type OnUpdateTodoSubscription = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -178,8 +178,8 @@ export type OnDeleteTodoSubscription = {
   __typename: "Todo";
   id: string;
   owner: string;
-  name: string;
-  description: string | null;
+  title: string;
+  author: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -197,8 +197,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }
@@ -223,8 +223,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }
@@ -249,8 +249,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }
@@ -272,8 +272,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }
@@ -298,8 +298,8 @@ export class APIService {
             __typename
             id
             owner
-            name
-            description
+            title
+            author
             createdAt
             updatedAt
           }
@@ -330,8 +330,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }
@@ -348,8 +348,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }
@@ -366,8 +366,8 @@ export class APIService {
           __typename
           id
           owner
-          name
-          description
+          title
+          author
           createdAt
           updatedAt
         }

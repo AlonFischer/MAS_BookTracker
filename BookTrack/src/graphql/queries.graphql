@@ -3,8 +3,8 @@ query GetTodo($id: ID!) {
   getTodo(id: $id) {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }
@@ -18,8 +18,8 @@ query ListTodos(
     items {
       id
       owner
-      name
-      description
+      title
+      author
       createdAt
       updatedAt
     }

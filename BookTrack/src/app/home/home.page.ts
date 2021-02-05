@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { APIService } from '../API.service';
+import { Auth } from 'aws-amplify';
+import { NavController } from '@ionic/angular';
+import { MapPage } from '../map/map.page';
+
 
 @Component({
   selector: 'app-home',
@@ -9,18 +14,12 @@ import { AlertController } from '@ionic/angular';
 export class HomePage implements OnInit {
 
   //locally stored booklist with placeholder books
-  books = [
-    {
-      name: "Lord of the Rings",
-      author: "Tolkien"
-    },
-    {
-      name: "Computer Networking",
-      author: "Kurose"
-    }
-  ];
-
-  constructor(private alertController: AlertController) {}
+  books = [];
+  constructor(
+    private alertController: AlertController,
+    private apiService: APIService,
+    public navCtrl: NavController,
+    ) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -65,10 +64,29 @@ export class HomePage implements OnInit {
   //called when "submit" is clicked to add a new book
   addBook(newTitle: string, newAuthor: string){
     console.log(newTitle + " " + newAuthor);
-    this.books.push({name: newTitle, author: newAuthor})
+    Auth.currentAuthenticatedUser().then((user) => {
+     this.apiService.CreateTodo({
+        title: newTitle,
+        author: newAuthor,
+        owner: user.username
+      });
+      this.books.push({name: newTitle, author: newAuthor})
+    });
   }
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.books = [];
+    this.apiService.ListTodos().then((evt) => {
+      Auth.currentAuthenticatedUser().then((user) => {
+        evt.items.forEach((item) => {
+          if (item.owner == user.username) {
+           this.books.push({name: item.title, author: item.author});
+         }
+        });
+      });
+    });
   }
+
+  ngOnInit() {}
 
 }

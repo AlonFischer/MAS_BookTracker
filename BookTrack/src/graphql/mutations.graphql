@@ -6,8 +6,8 @@ mutation CreateTodo(
   createTodo(input: $input, condition: $condition) {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }
@@ -19,8 +19,8 @@ mutation UpdateTodo(
   updateTodo(input: $input, condition: $condition) {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }
@@ -32,8 +32,8 @@ mutation DeleteTodo(
   deleteTodo(input: $input, condition: $condition) {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }

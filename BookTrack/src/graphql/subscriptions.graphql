@@ -3,8 +3,8 @@ subscription OnCreateTodo {
   onCreateTodo {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }
@@ -13,8 +13,8 @@ subscription OnUpdateTodo {
   onUpdateTodo {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }
@@ -23,8 +23,8 @@ subscription OnDeleteTodo {
   onDeleteTodo {
     id
     owner
-    name
-    description
+    title
+    author
     createdAt
     updatedAt
   }

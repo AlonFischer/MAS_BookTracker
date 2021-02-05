@@ -6,6 +6,6 @@ type Todo
 {
   id: ID!
   owner: String!
-  name: String!
-  description: String
+  title: String!
+  author: String
 }
