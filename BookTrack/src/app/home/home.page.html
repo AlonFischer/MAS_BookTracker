@@ -6,7 +6,7 @@
           <ion-item *ngFor="let book of books">
             <ion-item>{{ book.name }}</ion-item>
             <small>{{ book.author }}</small>
-            <ion-button color="danger" (click)="deleteBook()">Delete Book</ion-button>
+            <ion-button color="danger" (click)="deleteBook(book.id)">Delete Book</ion-button>
           </ion-item>
         </ion-list>
         

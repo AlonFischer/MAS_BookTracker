@@ -69,9 +69,17 @@ export class HomePage implements OnInit {
         title: newTitle,
         author: newAuthor,
         owner: user.username
-      });
-      this.books.push({name: newTitle, author: newAuthor})
+      }).then((book) => { this.books.push({name: newTitle, author: newAuthor, id: book.id}) });
+      
     });
+  }
+
+  deleteBook(id: string) {
+    this.apiService.DeleteTodo({
+      id: id
+    });
+    console.log(this.books);
+    this.books = this.books.filter(function(e) { return e.id !== id })
   }
 
   ionViewWillEnter() {
@@ -80,7 +88,7 @@ export class HomePage implements OnInit {
       Auth.currentAuthenticatedUser().then((user) => {
         evt.items.forEach((item) => {
           if (item.owner == user.username) {
-           this.books.push({name: item.title, author: item.author});
+           this.books.push({name: item.title, author: item.author, id: item.id});
          }
         });
       });
