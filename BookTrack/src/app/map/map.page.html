@@ -1,7 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Nearby Book Stores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-	<amplify-authenticator>
-    <div>
-      <amplify-sign-out></amplify-sign-out>
-    </div>
+  
+  <div class="row" #map id="map" style="height: 45%;"></div> 
+
+  <div class="row, groupList" scrollY="true" style="height: 45%;">
+    
+    <ion-list scrollY="true">
+    <ion-item *ngFor="let place of places" button (click) = "centerOnShop(place.place_id)">
+        {{ place.name }}
+    </ion-item>
+    </ion-list>
+  </div>
+
+  <amplify-authenticator class="row">
+    <amplify-sign-out style="height: 10%;"></amplify-sign-out>
   </amplify-authenticator>
 </ion-content>

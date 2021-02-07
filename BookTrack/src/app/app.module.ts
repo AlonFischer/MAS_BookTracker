@@ -13,6 +13,8 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 Amplify.configure(awsconfig);
 Auth.configure(awsconfig);
 
@@ -23,7 +25,8 @@ Auth.configure(awsconfig);
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Geolocation
   ],
 
   bootstrap: [AppComponent]
