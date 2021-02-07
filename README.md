@@ -2,7 +2,7 @@
 cs8803 Mobile Apps and Services Programming Assignment
 
 
-tutorial's used:https://docs.amplify.aws/start/getting-started/installation/q/integration/ionic, https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#option-1-use-pre-built-ui-components, https://www.freakyjolly.com/ionic-tabs-bar-navigation-tutorial/#.YB9QK-hKiUl, https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b
+tutorial's used:https://docs.amplify.aws/start/getting-started/installation/q/integration/ionic, https://docs.amplify.aws/lib/auth/getting-started/q/platform/js#option-1-use-pre-built-ui-components, https://www.freakyjolly.com/ionic-tabs-bar-navigation-tutorial/#.YB9QK-hKiUl, https://dev.to/playra/crud-create-read-update-delete-aws-amplify-graphql-react-native-4m2b, https://www.techiediaries.com/ionic-geolocation-google-maps-places-api/, https://www.techiediaries.com/ionic-geolocation-google-maps-places-api-part-2/, https://www.youtube.com/watch?v=y0haF2iOuak
   
   Building and running the project on your own machine: for the map tab to work, you must install the cordova geolocation plugin:
   
