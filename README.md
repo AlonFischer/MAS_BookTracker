@@ -31,7 +31,7 @@
   
   `npm install --save @ionic-native/geolocation`
   
-   In addition, BookTrack/src/index.html includes a script for the Google Maps API with an API key. This key no longer works. We wanted to avoid having the API key publicly available and will submit the working API key seperately. 
+   In addition, BookTrack/src/index.html includes a script for the Google Maps API with an API key. This key no longer works. We wanted to avoid having the API key publicly available. Our API key will be listed in both of our reports if needed. In index.html, the URL with the API key must end with '&libraries=places'.
 
    You can use your own API key though google will ask for your credit card information. To use your own API key:
   
